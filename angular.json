@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "todofirestore": {
+    "todoangular": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -22,13 +22,17 @@
               }
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "server": "src/main.server.ts",
             "outputMode": "server",
             "ssr": {
               "entry": "src/server.ts"
-            }
+            },
+            "polyfills": [
+              "@angular/localize/init"
+            ]
           },
           "configurations": {
             "production": {
@@ -58,10 +62,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "todofirestore:build:production"
+              "buildTarget": "todoangular:build:production"
             },
             "development": {
-              "buildTarget": "todofirestore:build:development"
+              "buildTarget": "todoangular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -81,10 +85,16 @@
             ],
             "styles": [
               "src/styles.css"
+            ],
+            "polyfills": [
+              "@angular/localize/init"
             ]
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "90982bfb-c098-47be-bf46-6509ad8e29a7"
   }
 }
